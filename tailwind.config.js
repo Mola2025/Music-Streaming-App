@@ -1,8 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{html,js,jsx,tsx,ts}"],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {},
   },
   plugins: [],
+  variants: {
+    extend: {
+      resize: ["hover", "focus"],
+    },
+  },
 };

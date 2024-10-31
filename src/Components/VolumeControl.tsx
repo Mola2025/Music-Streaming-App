@@ -12,6 +12,7 @@ const VolumeControl: React.FC = () => {
         <div>
             <input
                 id="volume-slider"
+                placeholder='volume'
                 type="range"
                 min="0"
                 max="100"

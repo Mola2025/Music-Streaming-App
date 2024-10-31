@@ -43,7 +43,7 @@ const ForgotPassword = () => {
                     <button type="submit">Forgot Password</button>
 
                     <div className='register'>
-                        <span onClick={() => navigate('/login')}>Go Back</span>
+                        <span onClick={() => navigate('/')}>Go Back</span>
                     </div>
                 </form>
             </div>

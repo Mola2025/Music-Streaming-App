@@ -1,14 +1,13 @@
 import React from 'react'
+import { useTheme } from './ThemeContext';
 
 const QueueBox = () => {
+
+    const { isDarkMode } = useTheme(); // Obtener el estado y la función del contexto
+
     return (
-        <div className='text-center w-[100%] h-full bg-[#1e1d1d] flex-auto p-1 rounded-lg overflow-hidden'>
+        <div className={`text-center w-[100%] h-full flex-auto p-1 rounded-lg overflow-hidden ${isDarkMode ? 'bg-[#1e1d1d]' : 'bg-[#ebeaeaf4] text-black'}`}>
             <div className="overflow-y-auto">
-                <div className="flex justify-end">
-                    <button className="flex items-center gap-1 px-2 py-1 bg-[#1e1d1d] rounded-md">
-                        <img src="/src/assets/frontend-assets/close.png" alt="" className='h-5 w-5 cursor-pointer' />
-                    </button>
-                </div>
                 <div className="flex flex-col gap-2 p-2">
                     <h1 className="text-lg font-semibold text-left">Current Song</h1>
                     <div className="flex items-center gap-2 py-3">

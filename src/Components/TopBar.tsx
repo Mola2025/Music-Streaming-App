@@ -3,9 +3,14 @@ import { useTheme } from './ThemeContext';
 import '/src/index.css';
 import { useNavigate } from 'react-router-dom';
 
-const TopBar = ({ toggleMenu }) => {
+interface TopBarProps {
+    toggleMenu: () => void;
+    onSearch: (query: string) => void;
+}
+
+const TopBar: React.FC<TopBarProps> = ({ toggleMenu, onSearch }) => {
     const navigate = useNavigate();
-    const { isDarkMode } = useTheme(); // Obtener el estado y la función del contexto
+    const { isDarkMode } = useTheme();
 
     useEffect(() => {
         const minimizeButton = document.querySelector<HTMLButtonElement>('#minimize-btn');
@@ -34,6 +39,12 @@ const TopBar = ({ toggleMenu }) => {
         });
     }, []);
 
+    const handleSearchInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            onSearch((e.target as HTMLInputElement).value);
+        }
+    };
+
     return (
         <div className={`overflow-auto flex-row min-h-16 p-1 flex relative`}>
             <div id='arrows' className={`h-[100%] w-14 p-4 self-center ${isDarkMode ? 'bg-black' : 'bg-white'}`}>
@@ -48,7 +59,13 @@ const TopBar = ({ toggleMenu }) => {
                 </div>
                 <div className={`h-10 w-[90%] rounded-full flex items-center justify-center p-4 ml-1 ${isDarkMode ? 'bg-black' : 'bg-[#ebeaeaf4]'}`}>
                     <img src={isDarkMode ? "/src/assets/frontend-assets/search.png" : "/src/assets/frontend-assets/searchdark.png"} alt="" className='h-6 w-6 cursor-pointer' />
-                    <input id='search-input' type="text" placeholder='¿What do you want to reproduce?  ' className='bg-transparent outline-none px-2 tracking-tighter w-full' />
+                    <input
+                        id='search-input'
+                        type="text"
+                        placeholder='¿What do you want to reproduce?  '
+                        className='bg-transparent outline-none px-2 tracking-tighter w-full'
+                        onKeyPress={handleSearchInput}
+                    />
                 </div>
             </div>
             <div className={`h-12 w-12 rounded-full flex justify-center items-center mr-2 ${isDarkMode ? 'bg-black' : 'bg-white'}`}>

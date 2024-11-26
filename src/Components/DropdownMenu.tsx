@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getAuth, signOut } from 'firebase/auth';
 import { useTheme } from './ThemeContext';
 
-const DropdownMenu = ({ menuVisible }) => {
+const DropdownMenu: React.FC<{ menuVisible: boolean }> = ({ menuVisible }) => {
     const navigate = useNavigate();
     const auth = getAuth();
     const { isDarkMode, toggleTheme } = useTheme(); // Obtener el estado y la función del contexto

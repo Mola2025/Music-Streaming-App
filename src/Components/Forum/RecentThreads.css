@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.RecentThreads {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.RecentThreads h2 {
+    text-align: center;
+    color: #333;
+    font-family: "Quicksand", sans-serif;
+    font-size: larger;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.RecentThreads ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.RecentThreads li {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    transition: box-shadow 0.3s;
+}
+
+.RecentThreads li:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.RecentThreads h3 {
+    margin: 0;
+    color: #007bff;
+}
+
+.RecentThreads p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.RecentThreads small {
+    display: block;
+    margin-top: 10px;
+    color: #777;
+}
+
+.reply-post {
+    position: absolute;
+    bottom: 7px;
+    right: 15px;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.reply-post:hover {
+    color: #0056b3;
+}
+
+.reply-post-l {
+    position: absolute;
+    bottom: 7px;
+    left: 15px;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.reply-post-l:hover {
+    color: #0056b3;
+}
+
+.highlight-star {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #ffc107;
+}
+
+.highlight-star img {
+    width: 20px;
+    /* Ajusta el tamaño según sea necesario */
+    height: 20px;
+    /* Mantén la proporción de aspecto */
+}

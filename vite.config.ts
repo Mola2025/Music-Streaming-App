@@ -7,5 +7,6 @@ export default defineConfig({
     proxy: {
       '/api': 'http://localhost:3001'
     }
-  }
+  },
+  envPrefix: "VITE_", // Solo las variables que empiezan con VITE_ estarán disponibles en el frontend
 });

@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -19,7 +19,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 #arrows {
@@ -179,7 +180,7 @@ code {
   background-color: transparent;
   border: none;
   outline: none;
-  border: 2px solid rgba(255, 255, 255, .2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
   font-size: 16px;
   color: #fff;
@@ -197,7 +198,7 @@ code {
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
   color: #fff;
-  font-family: 'Spotify Circular', Arial, sans-serif;
+  font-family: "Spotify Circular", Arial, sans-serif;
 }
 
 .profile-edit-container h2 {
@@ -314,4 +315,39 @@ code {
 
 .menu-item:hover {
   background-color: #908e8e;
+}
+/* Scrollbar personalizado */
+.lyrics-container {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #222;
+}
+
+.lyrics-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lyrics-container::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.lyrics-container::-webkit-scrollbar-track {
+  background: #222;
+}
+
+.scrolling-text {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  animation: scrolling-text 10s linear infinite;
+}
+
+@keyframes scrolling-text {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

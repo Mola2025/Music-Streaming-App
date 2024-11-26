@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import '/src/index.css'
+import React from 'react';
+import '/src/index.css';
 
-const VolumeControl: React.FC = () => {
-    const [volume, setVolume] = useState<number>(50);
+interface VolumeControlProps {
+    volume: number;
+    onVolumeChange: (volume: number) => void;
+}
 
+const VolumeControl: React.FC<VolumeControlProps> = ({ volume, onVolumeChange }) => {
     const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setVolume(Number(event.target.value));
+        onVolumeChange(Number(event.target.value));
     };
 
     return (
@@ -20,8 +23,7 @@ const VolumeControl: React.FC = () => {
                 onChange={handleVolumeChange}
                 className='w-[100px] h-1 mr-5'
             />
-            {/* <p className='flex justify-end text-sm ml-32'>{volume}</p> */}
-        </div >
+        </div>
     );
 };
 

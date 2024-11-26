@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { auth, db } from "../firebase-config.ts";
+import { auth, db } from "../firebase-config";
 import { updateProfile, User } from "firebase/auth";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
@@ -106,6 +106,7 @@ const ProfileEdit: React.FC = () => {
                 <div>
                     <label>Name:</label>
                     <input
+                        placeholder="Name"
                         type="text"
                         value={displayName}
                         onChange={(e) => setDisplayName(e.target.value)}
@@ -114,6 +115,7 @@ const ProfileEdit: React.FC = () => {
                 <div>
                     <label>Email:</label>
                     <input
+                        placeholder="Email"
                         type="email"
                         value={email}
                         disabled
@@ -125,6 +127,7 @@ const ProfileEdit: React.FC = () => {
                 <div>
                     <label>Biography:</label>
                     <textarea
+                        placeholder="Biography"
                         value={bio}
                         onChange={(e) => setBio(e.target.value)}
                     ></textarea>
@@ -132,6 +135,7 @@ const ProfileEdit: React.FC = () => {
                 <div>
                     <label>Status:</label>
                     <input
+                        placeholder="Status"
                         type="text"
                         value={status}
                         onChange={(e) => setStatus(e.target.value)}
@@ -140,6 +144,7 @@ const ProfileEdit: React.FC = () => {
                 <div>
                     <label>Birthdate:</label>
                     <input
+                        placeholder="Birthdate"
                         type="date"
                         value={birthdate}
                         onChange={(e) => setBirthdate(e.target.value)}
@@ -147,7 +152,7 @@ const ProfileEdit: React.FC = () => {
                 </div>
                 <div>
                     <label>Gender:</label>
-                    <select value={gender} onChange={(e) => setGender(e.target.value)}>
+                    <select title="Gender" value={gender} onChange={(e) => setGender(e.target.value)}>
                         <option value="">Select</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -157,7 +162,7 @@ const ProfileEdit: React.FC = () => {
                 </div>
                 <div>
                     <label>Profile Picture:</label>
-                    <input type="file" accept="image/*" onChange={handleFileChange} />
+                    <input type="file" accept="image/*" onChange={handleFileChange} placeholder="Profile Picture" />
                     {profilePicUrl && (
                         <div>
                             <p>Current Picture:</p>

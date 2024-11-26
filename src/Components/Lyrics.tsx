@@ -1,13 +1,26 @@
-import React from 'react'
+import React from 'react';
+import "/src/index.css";
 
-const Lyrics = () => {
-    return (
-        <div className='text-center w-[100%] h-full bg-[#1e1d1d] flex-auto p-1 rounded-lg overflow-hidden'>
-            <div className="overflow-y-auto">
-
-            </div>
-        </div>
-    )
+interface LyricsProps {
+    lyrics: string;
 }
 
-export default Lyrics
+const Lyrics: React.FC<LyricsProps> = ({ lyrics }) => {
+    return (
+        <div
+            className="h-full w-full p-4 overflow-y-auto text-left"
+            style={{
+                fontFamily: "'Roboto', sans-serif",
+                fontSize: "14px",
+                lineHeight: "1.6",
+                whiteSpace: "pre-wrap", // Mantener saltos de línea
+                color: "#fff", // Ajustar para modo oscuro
+                scrollbarWidth: "thin", // Estilizar el scroll en navegadores compatibles
+            }}
+        >
+            {lyrics || "Lyrics not available for this song."}
+        </div>
+    );
+};
+
+export default Lyrics;

@@ -7,14 +7,16 @@
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
   },
   "ts-node": {
     "esm": true,
     "experimentalSpecifierResolution": "node"
   },
   "include": [
-    "server.ts"
+    "server.ts",
+    "src/**/*",
+    "global.d.ts"
   ],
   "references": [
     {

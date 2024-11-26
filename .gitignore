@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Archivos que no quiero subir
+
+/src/spotify-web-playback.d.ts
+/src/useSpotifyPlayer.tsx
+/src/global.d.ts
+/src/components/Callback.tsx

@@ -15,7 +15,7 @@ social music experience.
 
 ## 🛠️ Technologies Used
 
-- **Frontend:** React
+- **Frontend:** React / Vite
 - **Backend:** TypeScript
 - **Database:** Firebase
 - **API:** Spotify Web API
